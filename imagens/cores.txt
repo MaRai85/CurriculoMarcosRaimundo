@@ -1,0 +1,18 @@
+https://paletadecores.com/paleta/ffffea/a795a5/7a959e/424e5e/3b2b46/
+
+LETRA: Helvetica
+
+CORES ORIGINAIS
+
+:root {
+  --primaria: #6C6AEB;
+  --secundaria: #adff2f;
+  --terciaria: #ecd950;
+  --leitura: rgba(3, 2, 2, 0.681);
+  /*--------------------------------------*/
+  --borda: #adff2f; /*igual a secundaria*/
+  --hover: #e586d1;
+  --fundo: black;
+  --texto: white;
+  --neutro: #747275;
+}
