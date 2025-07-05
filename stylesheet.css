@@ -1,0 +1,549 @@
+:root {
+  --primaria: #6C5CE7;
+  --secundaria: #3ABEFF;
+  --terciaria: #A259FF;
+  --leitura: rgba(3, 2, 2, 0.681);
+  /*--------------------------------------*/
+  --borda: #3abeff; /*igual a secundaria*/
+  --hover: #2cfafa;
+  --fundo: #040405;
+  --texto: rgb(227, 221, 221);
+  --neutro: #ccccd0;
+}
+/*RESET GERAL*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+/*ALTERAÇOES NO TITULO*/
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 45px;
+  background: url(imagens/horizontal_binario.jpg);
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  flex-wrap: wrap;
+}
+.tituloTexto {
+  display: inline-block;
+  color: var(--texto);
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: larger;
+  flex-shrink: 1;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/*ALTERACOES NA POSIÇAO DO MENU PRINCIPAL*/
+.menuPrincipal {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items:center;
+  gap: 20px;
+  justify-content: space-evenly;
+  padding: 10px;
+  border-radius: 50px;
+  border: 2px solid var(--secundaria);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: large;
+  background-color: var(--primaria);
+  width: 100%;
+  max-width: 90%;
+  height: auto;
+  min-height: 50px;
+  max-width: 3840px; /*telas 4k*/
+  margin: 0 auto;
+}
+/*AJUSTES NOS TEXTOS DOS MENUS DE NAVEGACAO*/
+.NomeMenus {
+  color: var(--secundaria);
+  transition: color 1s ease;
+  transform-origin: center;
+  will-change: transform;
+  white-space: nowrap;
+}
+.NomeMenus:hover {
+  color: var(--hover);
+  font-weight: bolder;
+  transform: scale(1.05);
+  transition: transform  0.5s ease, color 0.5s ease;
+  box-shadow: #2cfafa;
+}
+/*IMAGEM DE FUNDO DA PAGINA INDEX*/
+.ImagemFundoPrincipal {
+  display: block;
+  width: 99%;
+  max-width: 3810px;   /*mesma largura que a nav*/
+  height: auto;
+  margin: 5px auto;
+  border: 1px solid var(--secundaria);
+  border-radius: 50px;
+  object-fit: cover;
+}
+.bodyPrincipal {
+  background-color: var(--fundo);
+  padding-bottom: 25px;
+}
+
+/*ALTERACOES NO RODAPE DO MENU PRINCIPAL*/
+.rodapePrincipal {
+  position: fixed;
+  width: 100%;
+  text-align: right;
+  bottom: 0;
+  right: 0;
+  padding: 3px 3px;
+  background-color: var(--primaria);
+  color: var(--secundaria);
+}
+/***********ANIMAÇÃO NOs CLIQUEs DE MENUS DE NAVEGAÇÃO *********/
+#AnimacaoCliquesMenu {
+  position: fixed;
+  display: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+}
+#clickImagem {
+  width: 350px;
+  height: auto;
+  animation: pop 0.8s ease-out;
+}
+@keyframes pop {
+  0% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+/******BOTAO VOLTAR EM TODAS AS PÁGINAS*****/
+.rodapeSub {
+  /*rodapé dos submenus*/
+  position: fixed;
+  bottom: 5px;
+  width: 100%;
+  background-color: var(--primaria);
+  padding: 15px;
+  text-align: center;
+  font-size: large;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.botaoVoltar {
+  background-color: var(--texto);
+  color: var(--primaria);
+  padding: 2px 50px;   /*tamanhao botao*/
+  border-radius: 10px;
+  font-weight: bold;
+  border: 2px solid var(--borda);
+  border-style: double;
+  transition: background-color 0.3s ease;
+}
+
+.botaoVoltar:hover {
+  background-color: var(--primaria);
+  color: var(--texto);
+}
+
+/*--------ANIMAÇÃO DO BOTÃO VOLTAR-------*/
+.animacaoVoltar {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 350px;
+  height: auto;
+  transform: translate(-50%, -50%);
+  animation: girar 1s ease-in-out;
+}
+@keyframes girar {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg) scale(0.5);
+    opacity: 0;
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(180deg) scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg) scale(1);
+    opacity: 0;
+  }
+}
+/*********FIM DE ANIMAÇÕES DE CLIQUE******/
+/*-----------------------------------------------------------------------*/
+/*-----------------------------SOBRE MIM---------------------------------*/
+/*-----------------------------------------------------------------------*/
+.fundoGeral {
+  display:flex;
+  display: block;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif; /*tipo letra pra todos os bodys de fundoGeral*/
+  background-image: url(imagens/img_fundo_clean.png);
+  background-repeat: repeat-y;
+  background-size: 100% auto;
+  background-color: var(--fundo);
+}
+
+/*CAIXAS DE IMAGEM E TEXTO DO "SOBRE MIM"*/
+#imagensPerfil {
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: start;
+  gap: 200px;
+  padding: 20px;
+  padding-bottom: 60px;
+  color: var(--texto);
+}
+
+.imagemPessoal,
+.imagemProfissional {
+  background-color: var(--leitura);
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 300px;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+  max-width: 900px;
+}
+
+.imagemPessoal img,
+.imagemProfissional img {
+  width: 50%;  /*tamanho das duas imagens, igualmente bonito em 50 ou 100%*/
+  height: auto;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+.descricaoProfissional::first-letter, .descricaoPessoal::first-letter { /*lettra maiuscula no inicio*/
+    font-size: 25px;
+    font-weight: bold;
+    margin-right: 2px;
+    font-family: 'Georgia', serif;
+    color: var(--texto);
+  }
+/*-----------------------------------------------------------------------*/
+/*-----------------------------CONTATO-----------------------------------*/
+/*-----------------------------------------------------------------------*/
+.tituloDisp {
+  font-size:x-large;
+  text-align: center;
+  padding: 10px 15px;
+  color: var(--secundaria);
+}
+
+.tabelaDsiponibilidade {
+  display: table;
+  position: relative;
+  margin: 0 auto;
+  border: 2px solid var(--borda);
+  background-color: var(--texto);
+  color: var(--fundo);
+  max-width: 100%;
+  min-width: 300px;
+}
+.tabela_container { /*permite navegar lateralmente*/
+  width: 100%;
+  overflow-x: auto;
+}
+.tabelaDsiponibilidade th {
+  border: 2px solid var(--secundaria);
+  padding: 8px;
+  text-align: center;
+}
+
+/*Alteração das caixas de cntato*/
+.containerContatos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+  padding-top: 120px;
+  padding-left: 60px;
+  padding-right: 60px;
+  padding-bottom: 60px;
+  font-size: larger;
+  color: var(--secundaria);
+}
+
+a.buttonLink {
+  display: inline-block;
+  color: var(--texto);
+  background-color: var(--primaria);
+  border-radius: 100px;
+  border: 1px solid var(--secundaria);
+  padding: 10px 100px;
+  text-decoration: none;
+  transition: background-color 0.5s ease;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+}
+
+.telefone,
+.email {
+  color: var(--texto);
+  font-weight: bold;
+}
+
+.buttonLink:hover {
+  background-color: var(--hover);
+  color: var(--fundo);
+}
+/*-----------------------------------------------------------------------*/
+/*-----------------------------LINKS UTEIS-------------------------------*/
+/*-----------------------------------------------------------------------*/
+.tituloLinksUteis { 
+  color: var(--secundaria);
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+.botaoDeCertificados {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+.acessoAcertificados { /*botão para acessar os certificados*/
+  display: inline-block;
+  width: 1800px;
+  max-width: 90%;
+  text-align: center;
+  font-style: italic;
+  font-size: large;
+  padding: 10px 20px;
+  border: 2px solid var(--borda);
+  border-radius: 100px;
+  color: var(--texto);
+  background-color: var(--primaria);
+  text-decoration: none;
+  transition: all 0.6s ease;
+}
+.acessoAcertificados:hover {
+  transform: scale(1.1);
+  font-weight: bold;
+  color: var(--hover);
+}
+.outrasRedes {
+  color: var(--secundaria);
+  padding: 30px;
+}
+.redesOutrasTabela img {
+  max-width: 50px;
+  vertical-align: middle;
+  padding-left: 5px;
+  object-fit: contain;
+}
+.redesOutrasTabela {
+  height: auto;
+  padding-left: 5%;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bolder;
+}
+.redesOutrasTabela li {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 35px;
+}
+.redesOutrasTabela a {
+  color: var(--fundo);
+  font-weight: lighter;
+}
+.botaoSites { /*botão dos links de acesso*/
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  background: var(--secundaria);
+  color: var(--fundo);
+  text-decoration: none;
+  gap: 5px;
+  padding: 2px 8px;
+  border-radius: 100px;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+.botaoSites:hover {
+  text-decoration: underline;
+  background-color: var(--primaria);
+  color: var(--texto);
+  animation: alternate-reverse;
+}
+/*-----------------------------------------------------------------------*/
+/*----------------------HISTORICO PROFISSIONAL---------------------------*/
+/*-----------------------------------------------------------------------*/
+.emprego {
+  margin-bottom: 30px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 10px;
+}
+
+.cargo {
+  background-color: var(--leitura); /*será usado para desfocar o fundo em todas as proximas vezes que for necessario*/
+  color: var(--secundaria);
+  border: solid var(--primaria);
+  border-width: thick;
+  border-radius: 100px;
+  font-weight: bolder;
+  text-align: center;
+  margin: 10px;
+}
+
+.local {
+  color: var(--secundaria);
+}
+
+.periodo {
+  font-style: italic;
+  color: var(--neutro);
+}
+
+.responsabilidade {
+  list-style: disc inside;
+  color: var(--texto);
+}
+
+.responsabilidade li {
+  background-color: var(--leitura);
+  padding: 8px 5px;
+}
+
+.responsabilidade ul {
+  padding-bottom: 40px;
+}
+/*-----------------------------------------------------------------------*/
+/*------------------------------QUALIFICACOES----------------------------*/
+/*-----------------------------------------------------------------------*/
+/*Formação*/
+.formacaoAcademica {
+  color: var(--texto);
+  background-color: var(--leitura);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+  padding: 25px;
+  border-color: 3px solid var(--secundaria);
+}
+
+.tituloFormacao {
+  font-size: 400%;
+  font-variant: small-caps;
+}
+
+.curso {
+  color: var(--secundaria);
+}
+
+.tipoFormacao {
+  color: var(--texto);
+}
+
+.localFormacao {
+  color: var(--terciaria);
+  font-style: italic;
+}
+
+.periodoFormacao {
+  color: var(--neutro);
+  font-style: italic;
+}
+
+/******** idiomas *******/
+.tituloIdiomas {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 25px;
+  padding-top: 40px;
+  color: var(--texto);
+  font-size: 200%;
+  font-variant: small-caps;
+}
+
+.idiomasTable {
+  display: flexbox;
+  justify-content: space-between;
+  border-collapse: collapse;
+  table-layout: fixed;
+  width: 100%;
+  font-family: Verdana, sans-serif;
+  font-size: medium;
+  max-width: 100%;
+  min-width: 400px;
+  color: var(--secundaria);
+  background-color: var(--leitura);
+}
+
+.idiomasTable th,
+.idiomasTable td {
+  padding: 12px;
+  border: 1px solid var(--texto);
+  text-align: center;
+  overflow: hidden;
+
+  white-space: nowrap;
+}
+
+.idiomasTable .header {
+  background-color: var(--primaria);  /* tom destacado */
+  color: var(--texto);
+  font-weight: bold;
+  font-size: larger;
+}
+
+/******** Informaçoes Adicionais *******/
+.infoAdicionalTitulo {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 20px;
+  padding-top: 80px;
+  color: var(--texto);
+  font-size: 200%;
+  font-variant: small-caps;
+}
+
+.listaInfAd {
+  padding-bottom: 80px;
+}
+
+.listaInfAd li {
+  display: list-item;
+  color: var(--terciaria);
+  background-color: var(--leitura);
+  padding: 5px 20px;
+  border-bottom: 1px dotted var(--secundaria);
+  list-style: none;
+  position: relative;
+}
+
+.listaInfAd li::before {
+  content: "•";
+  color: var(--primaria);
+  font-size: 25px;
+  padding-right: 8px;
+  left: 0;
+  top: 0;
+}
